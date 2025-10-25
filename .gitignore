@@ -1,26 +1,25 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# Virtual environment
-venv/
-env/
-
 # Django
-*.sqlite3
-db.sqlite3
 *.log
 *.pot
 *.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
 
-# IDE / PyCharm
-.idea/
-*.iml
+# Environment
+.env
+venv/
+.env.local
 
-# PyCharm
+# IDE / Editor
 .idea/
-*.iml
-# Migrations (optional, usually keep them)
-# */migrations/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional, if you don’t want to track them)
+# */migrations/*
+# !*/migrations/__init__.py
