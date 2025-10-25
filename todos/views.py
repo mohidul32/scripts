@@ -1,12 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Task
 from .forms import TaskForm
-
-# Create your views here.
+from django.core.cache import cache
 
 def task_list(request):
-    # TODO: check this function
-    tasks = Task.objects.all()
+    # Try to get data from cache
+    tasks = cache.get('tasks_list')
+
+    if not tasks:
+        print("⏳ Cache miss — fetching from DB...")
+        tasks = list(Task.objects.all())
+        cache.set('tasks_list', tasks, timeout=60)  # Cache for 60 seconds
+    else:
+        print("✅ Cache hit — fetched from Redis cache!")
+
     return render(request, 'todos/task_list.html', {'tasks': tasks})
 
 def task_create(request):
