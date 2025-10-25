@@ -39,3 +39,4 @@ def task_delete(request, pk):
         task.delete()
         return redirect('task_list')
     return render(request, 'todos/task_delete.html', {'task': task})
+# Added by automation script
