@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# Django
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.pyc
+
+# IDE / PyCharm
+.idea/
+*.iml
+
+# PyCharm
+.idea/
+*.iml
+# Migrations (optional, usually keep them)
+# */migrations/
