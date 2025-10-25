@@ -9,3 +9,9 @@
     </li>
 {% endfor %}
 </ul>
+
+
+<form action="{% url 'bulk-complete' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Complete All Tasks</button>
+</form>

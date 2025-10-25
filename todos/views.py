@@ -40,3 +40,9 @@ def task_delete(request, pk):
         return redirect('task_list')
     return render(request, 'todos/task_delete.html', {'task': task})
 # Added by automation script
+
+
+# views.py এ
+def bulk_complete_tasks(request):
+    Task.objects.filter(completed=True).update(completed=False)
+    return redirect('task_list')
