@@ -5,10 +5,12 @@ from .forms import TaskForm
 # Create your views here.
 
 def task_list(request):
+    # TODO: check this function
     tasks = Task.objects.all()
     return render(request, 'todos/task_list.html', {'tasks': tasks})
 
 def task_create(request):
+    # TODO: check this function
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
@@ -19,6 +21,7 @@ def task_create(request):
     return render(request, 'todos/task_form.html', {'form': form})
 
 def task_update(request, pk):
+    # TODO: check this function
     task = get_object_or_404(Task, pk=pk)
     if request.method == 'POST':
         form = TaskForm(request.POST, instance=task)
@@ -30,6 +33,7 @@ def task_update(request, pk):
     return render(request, 'todos/task_form.html', {'form': form})
 
 def task_delete(request, pk):
+    # TODO: check this function
     task = get_object_or_404(Task, pk=pk)
     if request.method == 'POST':
         task.delete()
