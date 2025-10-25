@@ -5,6 +5,9 @@ from django.core.cache import cache
 from django.contrib import messages
 from django.db import DatabaseError
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def task_list(request):
     # Try to get data from cache
     tasks = cache.get('tasks_list')
